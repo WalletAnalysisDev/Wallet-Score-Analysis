@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copytrade Wallet Score Privacy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: a single reading column, policy sections as a quiet ledger with a sticky contents rail on wide screens */
+:root{
+  --bg:#f6f8f7; --paper:#ffffff; --ink:#18201d; --muted:#5b6762; --line:#dfe6e2; --accent:#1f8a62; --accent-soft:#e3f2eb;
+  --display:"Manrope","Segoe UI",system-ui,sans-serif; --body:"Source Serif 4",Georgia,"Times New Roman",serif; --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1312;--paper:#151a18;--ink:#e6ece9;--muted:#9aa8a2;--line:#26302c;--accent:#3fc28f;--accent-soft:#163027;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1312;--paper:#151a18;--ink:#e6ece9;--muted:#9aa8a2;--line:#26302c;--accent:#3fc28f;--accent-soft:#163027;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
+.wrap{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;align-items:start}
+header{grid-column:1/-1;display:flex;flex-direction:column;gap:10px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,5vw,44px);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.meta{font-family:var(--display);font-size:14px;color:var(--muted)}
+nav{position:sticky;top:calc(24px + env(safe-area-inset-top,0px));font-family:var(--display);font-size:14px;display:flex;flex-direction:column;gap:8px}
+nav a{color:var(--muted);text-decoration:none}nav a:hover,nav a:focus-visible{color:var(--accent);outline:none;text-decoration:underline}
+main{min-width:0;max-width:68ch;display:flex;flex-direction:column;gap:36px}
+section{display:flex;flex-direction:column;gap:12px}
+h2{font-family:var(--display);font-weight:700;font-size:21px;margin:0;text-wrap:balance}
+p,ul{margin:0}ul{padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+.summary{background:var(--accent-soft);border-radius:10px;padding:18px 22px}
+.summary p{font-size:18px}
+table{width:100%;border-collapse:collapse;font-size:15px}.tbl{overflow-x:auto}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--display);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+code{font-family:var(--mono);font-size:.86em;background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+a{color:var(--accent)}
+footer{grid-column:1/-1;border-top:1px solid var(--line);padding-top:20px;font-family:var(--display);font-size:13px;color:var(--muted)}
+@media (max-width:760px){.wrap{grid-template-columns:minmax(0,1fr);gap:28px}nav{position:static;flex-direction:row;flex-wrap:wrap;gap:8px 16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Chrome extension</span>
+    <h1>Copytrade Wallet Score privacy policy</h1>
+    <span class="meta">Effective October 21, 2026 · applies to version 1.23.0 and later</span>
+  </header>
+
+  <nav aria-label="Contents">
+    <a href="#summary">Summary</a>
+    <a href="#data">What the extension handles</a>
+    <a href="#services">Services it contacts</a>
+    <a href="#gmgn">GMGN pages</a>
+    <a href="#storage">Storage and deletion</a>
+    <a href="#permissions">Permissions</a>
+    <a href="#limited">Limited use</a>
+    <a href="#other">Other terms</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="summary" class="summary">
+      <p>Copytrade Wallet Score analyzes public Solana blockchain data in your browser. The developer runs no server and collects nothing: no account, no analytics, no tracking, no ads. Everything you enter or the extension works out stays in your own browser, except the lookups it sends to the data services listed below to do its job.</p>
+    </section>
+
+    <section id="data">
+      <h2>What the extension handles</h2>
+      <ul>
+        <li><strong>Your Helius API key or keys.</strong> You paste these in Settings. They are saved in your browser and sent only to Helius, as part of each data request, so Helius can answer it.</li>
+        <li><strong>Wallet and token addresses.</strong> The addresses you type or paste, and the ones the extension finds while scanning a token's traders or holders. These are public blockchain addresses, not personal accounts with names attached.</li>
+        <li><strong>Analysis results.</strong> Scores, recommended filters, trade histories pulled from the blockchain, token names and prices, saved Holders checks, and your History list.</li>
+        <li><strong>Your settings.</strong> Scoring rules, filters and display choices.</li>
+      </ul>
+      <p>The extension does not ask for or read your name, email, browsing history, passwords, private keys, seed phrases or wallet balances you haven't looked up. It never connects to or signs with a crypto wallet and cannot move funds.</p>
+    </section>
+
+    <section id="services">
+      <h2>Services it contacts</h2>
+      <p>To look up blockchain data the extension sends requests straight from your browser to these services. Each request contains only what that lookup needs.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Service</th><th>What is sent</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Helius (<code>mainnet.helius-rpc.com</code>)</td><td>Your API key, and the wallet or token address being looked up</td><td>Transaction history, token details and holders</td></tr>
+          <tr><td>GeckoTerminal (<code>api.geckoterminal.com</code>)</td><td>Token addresses</td><td>Today's token prices and price history</td></tr>
+          <tr><td>Binance.US (<code>api.binance.us</code>)</td><td>Nothing about you; a request for SOL's price history</td><td>Converting SOL amounts to dollars</td></tr>
+        </tbody>
+      </table></div>
+      <p>These services handle requests under their own privacy policies. The developer has no access to what you send them.</p>
+    </section>
+
+    <section id="gmgn">
+      <h2>GMGN pages</h2>
+      <p>On <code>gmgn.ai</code> the extension reads the address of the page you are on and the token links on it, so it can show a score badge and labels for wallets you have analyzed. It does not click, type, submit or change anything on GMGN, and it does not send anything from the page anywhere. You can turn this off in Settings → Analysis → Show Wallet Score on GMGN pages.</p>
+    </section>
+
+    <section id="storage">
+      <h2>Storage and deletion</h2>
+      <p>All data is kept in your browser's extension storage on your device. It is not synced to the developer and not shared with anyone.</p>
+      <ul>
+        <li>Trades older than 31 days are removed automatically.</li>
+        <li>History → Clear history removes saved wallets, scores and Holders checks.</li>
+        <li>Settings → Storage shows what is saved and lets you clear each kind of data.</li>
+        <li>Removing the extension from Chrome deletes everything it saved.</li>
+      </ul>
+    </section>
+
+    <section id="permissions">
+      <h2>Permissions</h2>
+      <ul>
+        <li><strong>Side panel</strong>: shows the extension next to the page you are browsing.</li>
+        <li><strong>Storage</strong> and <strong>unlimited storage</strong>: keep your settings, keys and saved wallet trade history on your device so reopening a wallet is free.</li>
+        <li><strong>Access to the four sites above</strong>: the three data services, plus <code>gmgn.ai</code> for the page labels and for reading which wallet or token page you have open.</li>
+      </ul>
+    </section>
+
+    <section id="limited">
+      <h2>Limited use</h2>
+      <p>The use of information received by Copytrade Wallet Score adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements. Data is used only to provide the extension's wallet analysis. It is never sold, never transferred to third parties except the data services above as needed for that purpose, never used for advertising, and never used to decide creditworthiness or for lending.</p>
+    </section>
+
+    <section id="other">
+      <h2>Other terms</h2>
+      <ul>
+        <li>The extension is an analysis tool. Its scores and filters are estimates from past trades, not financial advice.</li>
+        <li>It is not affiliated with GMGN, Helius, GeckoTerminal or Binance.US.</li>
+        <li>If this policy changes, the new version will be posted here with a new effective date.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>For questions about this policy, use the Support tab on the extension's Chrome Web Store page.</p>
+    </section>
+  </main>
+
+  <footer>Copytrade Wallet Score · Privacy policy</footer>
+</div>
+
+</body>
+</html>
